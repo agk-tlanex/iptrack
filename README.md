@@ -1,87 +1,133 @@
 # 🌐 IP Tracker CLI
 
-Herramienta en línea de comandos para rastrear información pública de direcciones IP utilizando la API de **ipquery.io**. Permite consultar datos de ubicación, proveedor de red y riesgos asociados (VPN, proxy, etc.).
+> Herramienta de línea de comandos para rastrear información pública de direcciones IP, incluyendo ubicación geográfica, proveedor de red y detección de riesgos como VPN, proxy y Tor.
 
 ---
 
-## 📦 Características
+## ✨ Características
 
-- 🔍 Búsqueda de información de cualquier IP pública  
-- 📍 Obtiene ubicación geográfica (país, ciudad, estado, coordenadas)  
-- 🌐 Información del ISP (ASN, organización, proveedor)  
-- 🛡️ Detección de:
-  - VPN
-  - Proxy
-  - Tor
-  - Dispositivos móviles  
-- 🖥️ Interfaz CLI interactiva con menú  
-- 🎨 Salida estilizada usando `rich`
+| Funcionalidad | Descripción |
+|---|---|
+| 🔍 Rastreo de IP | Consulta cualquier dirección IP pública |
+| 📍 Geolocalización | País, ciudad, estado, coordenadas, zona horaria |
+| 🌐 Info de red | ASN, organización e ISP |
+| 🛡️ Detección de riesgos | VPN, proxy, Tor y redes móviles |
+| 🖥️ Interfaz interactiva | Menú CLI amigable |
+| 🎨 Salida estilizada | Renderizado con `rich` |
 
 ---
 
 ## ⚙️ Instalación
 
-1. Clona el repositorio:
+### 1. Clona el repositorio
 
-```bash```
+```bash
 git clone https://github.com/tu-usuario/ip-tracker-cli.git
 cd ip-tracker-cli
-Instala las dependencias:
+```
+
+### 2. Instala las dependencias
+
+```bash
 pip install -r requirements.txt
-🚀 Uso
+```
+
+> **Requisitos:** Python 3.8 o superior.
+
+---
+
+## 🚀 Uso
 
 Ejecuta el programa:
 
+```bash
 python iptrack.py
+```
 
-Menú principal
-[ TRACKER ]  » 1 «  → Rastrear una IP
-[ TRACK ME ] » 2 «  → Obtener tu propia IP e información
-[ EXTRAS ]   » 3 «  → Funciones adicionales (no implementadas)
-[ EXIT ]     » 0 «  → Salir
-🔎 Ejemplo de uso
-Rastrear una IP
-Selecciona opción 1
-Ingresa una IP pública:
+### Menú principal
+
+```
+[ TRACKER  ]  » 1 «  → Rastrear una IP específica
+[ TRACK ME ]  » 2 «  → Obtener información de tu propia IP
+[ EXTRAS   ]  » 3 «  → Funciones adicionales (próximamente)
+[ EXIT     ]  » 0 «  → Salir
+```
+
+---
+
+## 🔎 Ejemplos de uso
+
+### Opción 1 — Rastrear una IP
+
+```
 TRACK IP>>> 8.8.8.8
+```
 
-📊 Obtendrás:
+**Datos obtenidos:**
 
-IP
-ISP (ASN, organización)
-País, ciudad, estado
-Latitud y longitud
-Zona horaria
-Hora local
-📡 Rastrear tu propia IP
+- Dirección IP
+- ISP (ASN y organización)
+- País, ciudad y estado
+- Latitud y longitud
+- Zona horaria y hora local
 
-Selecciona opción 2
+### Opción 2 — Rastrear tu propia IP
 
-Incluye información adicional:
+Además de la información anterior, incluye detección de:
 
-Uso de VPN
-Proxy
-Red Tor
-Si es móvil
-⚠️ Notas importantes
-Solo funciona correctamente con IPs públicas
-Las IPs privadas (ej. 192.168.x.x) no devolverán información válida
-La precisión de la ubicación depende del proveedor de la API
-🧰 Dependencias
+- ✅ / ❌ VPN activa
+- ✅ / ❌ Proxy detectado
+- ✅ / ❌ Red Tor
+- ✅ / ❌ Conexión móvil
+
+---
+
+## 🧰 Dependencias
+
+```
 requests
 rich
 Pygments
 markdown-it-py
+```
 
-(Ver requirements.txt para versiones específicas)
+> Ver [`requirements.txt`](./requirements.txt) para versiones específicas.
 
-🔌 API utilizada
+---
+
+## 🔌 API utilizada
+
+Este proyecto utiliza la API pública de **ipquery.io**:
+
+```
 https://api.ipquery.io/
-🛠️ Pendiente / Mejoras
-Implementar opción EXTRAS
-Manejo más detallado de errores
-Exportar resultados a JSON o archivo
-Historial de consultas
-📄 Licencia
+```
 
-Este proyecto es de uso libre para fines educativos y personales.
+No se requiere API key para uso básico. Consulta su [documentación oficial](https://ipquery.io) para límites de uso.
+
+---
+
+## ⚠️ Consideraciones importantes
+
+- Solo funciona correctamente con **IPs públicas**.
+- Las IPs privadas (ej. `192.168.x.x`, `10.x.x.x`) no retornan información válida.
+- La precisión geográfica depende de los datos del proveedor de la API.
+- El uso excesivo puede estar sujeto a límites de tasa (*rate limiting*).
+
+---
+
+## 🛠️ Roadmap
+
+- [ ] Implementar funciones de la opción **EXTRAS**
+- [ ] Manejo de errores más detallado (timeouts, IPs inválidas, etc.)
+- [ ] Exportar resultados a JSON o CSV
+- [ ] Historial de consultas con búsqueda
+- [ ] Soporte para consultas en lote (múltiples IPs a la vez)
+- [ ] Modo silencioso (`--quiet`) para integración con scripts
+
+---
+
+## 📄 Licencia
+
+Este proyecto es de uso libre para fines **educativos y personales**.  
+Si lo usas en un proyecto propio, ¡una mención siempre es bienvenida! 🙌
