@@ -96,6 +96,3 @@ def trackme():
     response = requests.get('https://api.ipquery.io/')
     ip = response.text
     track(ip=ip, me=1)
-
-
-# track("")
