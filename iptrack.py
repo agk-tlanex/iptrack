@@ -4,7 +4,20 @@ from utils import banners
 from utils import iptracker
 
 def extras():
-    pass
+    banners.tlanex()
+    printcolor.printl("╔════════════════════════════════════════════════════════════════════════════════════╗", justify="center", style="green")
+    printcolor.printl("║                                                                                    ║", justify="center", style="green")
+    printcolor.printl("║                        [blink bold green]E X T R A S[/blink bold green]                        ║", justify="center", style="green")
+    printcolor.printl("║                                                                                    ║", justify="center", style="green")
+    printcolor.printl("║   [ GIT HUB ]                                   » http://github.com/agk-tlanex «   ║", justify="center", style="green")
+    printcolor.printl("║   [ TIK TOK ]                             » https://www.tiktok.com/@agk.tlanex «   ║", justify="center", style="green")
+    printcolor.printl("║   [ INSTAGRAM ]                         » https://www.instagram.com/agk.tlanex «   ║", justify="center", style="green")
+    printcolor.printl("║   [ YOUTUBE ]       » https://www.youtube.com/channel/UCtp5Yi8hXZmvECXEPMiufRw «   ║", justify="center", style="green")
+    printcolor.printl("║                                                                                    ║", justify="center", style="green")
+    printcolor.printl("╚════════════════════════════════════════════════════════════════════════════════════╝", justify="center", style="green")
+    printcolor.printl("Presiona » [blink bold green]Enter[/blink bold green] « para continuar...", justify="center", style="green")
+    input()
+
 
 def main():
     counter = ""
