@@ -85,6 +85,15 @@ banner_7 = r"""
  \___/\_|       \_/ \_| \_\_| |_/\____/\_| \_/\____/\_| \_|
 """
 
+def tlanex():
+    printcolor.println("""
+████████╗██╗      █████╗ ███╗   ██╗███████╗██╗  ██╗
+╚══██╔══╝██║     ██╔══██╗████╗  ██║██╔════╝╚██╗██╔╝
+   ██║   ██║     ███████║██╔██╗ ██║█████╗   ╚███╔╝ 
+   ██║   ██║     ██╔══██║██║╚██╗██║██╔══╝   ██╔██╗ 
+   ██║   ███████╗██║  ██║██║ ╚████║███████╗██╔╝ ██╗
+   ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝
+""", justify="center", style="bold green")
 
 def main_banner():
     printcolor.printl(f"""
@@ -106,6 +115,3 @@ def banner_error():
     printcolor.printl(f"╔═════════════════╗", justify="center", style="bold red")
     printcolor.printl(f"║    [blink]E R R O R[/blink]    ║", justify="center", style="bold red")
     printcolor.printl(f"╚═════════════════╝", justify="center", style="bold red")
-
-# main_banner()
-# random_banner()
