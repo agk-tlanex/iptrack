@@ -21,7 +21,7 @@
 
 ```
 ip-tracker-cli/
-├── iptrack.py          # Punto de entrada, menú principal
+├── main.py          # Punto de entrada, menú principal
 ├── requirements.txt    # Dependencias del proyecto
 └── utils/
     ├── iptracker.py    # Lógica de consulta a la API
@@ -36,8 +36,8 @@ ip-tracker-cli/
 ### 1. Clona el repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/ip-tracker-cli.git
-cd ip-tracker-cli
+git clone https://github.com/tu-usuario/ip-tracker.git
+cd ip-tracker
 ```
 
 ### 2. Instala las dependencias
@@ -55,7 +55,7 @@ pip install -r requirements.txt
 Ejecuta el programa:
 
 ```bash
-python iptrack.py
+python main.py
 ```
 
 ### Menú principal
