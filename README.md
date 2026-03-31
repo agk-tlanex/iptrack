@@ -9,11 +9,25 @@
 | Funcionalidad | Descripción |
 |---|---|
 | 🔍 Rastreo de IP | Consulta cualquier dirección IP pública |
-| 📍 Geolocalización | País, ciudad, estado, coordenadas, zona horaria |
+| 📍 Geolocalización | País, ciudad, estado, coordenadas, zona horaria y hora local |
 | 🌐 Info de red | ASN, organización e ISP |
 | 🛡️ Detección de riesgos | VPN, proxy, Tor y redes móviles |
-| 🖥️ Interfaz interactiva | Menú CLI amigable |
+| 🖥️ Interfaz interactiva | Menú CLI con navegación por teclado |
 | 🎨 Salida estilizada | Renderizado con `rich` |
+
+---
+
+## 📁 Estructura del proyecto
+
+```
+ip-tracker-cli/
+├── iptrack.py          # Punto de entrada, menú principal
+├── requirements.txt    # Dependencias del proyecto
+└── utils/
+    ├── iptracker.py    # Lógica de consulta a la API
+    ├── banners.py      # Banners ASCII decorativos
+    └── printcolor.py   # Utilidades de impresión con rich
+```
 
 ---
 
@@ -32,7 +46,7 @@ cd ip-tracker-cli
 pip install -r requirements.txt
 ```
 
-> **Requisitos:** Python 3.8 o superior.
+> **Requisitos:** Python 3.10 o superior (se usa `match/case`).
 
 ---
 
@@ -49,9 +63,11 @@ python iptrack.py
 ```
 [ TRACKER  ]  » 1 «  → Rastrear una IP específica
 [ TRACK ME ]  » 2 «  → Obtener información de tu propia IP
-[ EXTRAS   ]  » 3 «  → Funciones adicionales (próximamente)
+[ EXTRAS   ]  » 3 «  → Redes sociales del autor
 [ EXIT     ]  » 0 «  → Salir
 ```
+
+> Puedes interrumpir el programa en cualquier momento con `Ctrl+C`.
 
 ---
 
@@ -66,32 +82,46 @@ TRACK IP>>> 8.8.8.8
 **Datos obtenidos:**
 
 - Dirección IP
-- ISP (ASN y organización)
-- País, ciudad y estado
-- Latitud y longitud
+- ISP: ASN, organización y proveedor
+- Ubicación: país, código de país, ciudad y estado
+- Coordenadas: latitud y longitud
 - Zona horaria y hora local
 
 ### Opción 2 — Rastrear tu propia IP
 
-Además de la información anterior, incluye detección de:
+Detecta automáticamente tu IP pública y muestra, además de los datos anteriores:
 
-- ✅ / ❌ VPN activa
-- ✅ / ❌ Proxy detectado
-- ✅ / ❌ Red Tor
-- ✅ / ❌ Conexión móvil
+- 📱 Si estás en una red móvil
+- 🔒 Si usas VPN
+- 🧅 Si estás en la red Tor
+- 🕵️ Si tu tráfico pasa por un proxy
+
+---
+
+## 🛡️ Manejo de errores
+
+El programa detecta y muestra mensajes descriptivos para los siguientes códigos HTTP:
+
+| Código | Descripción |
+|---|---|
+| `400` | IP o formato no válido |
+| `404` | Recurso no encontrado |
+| `429` | Límite de solicitudes excedido |
+| `500` | Error interno del servidor |
+| `000` | No se ingresó ninguna IP |
 
 ---
 
 ## 🧰 Dependencias
 
 ```
-requests
-rich
-Pygments
-markdown-it-py
+requests==2.33.1
+rich==14.3.3
+Pygments==2.20.0
+markdown-it-py==4.0.0
 ```
 
-> Ver [`requirements.txt`](./requirements.txt) para versiones específicas.
+> Ver [`requirements.txt`](./requirements.txt) para la lista completa con versiones fijadas.
 
 ---
 
@@ -103,7 +133,7 @@ Este proyecto utiliza la API pública de **ipquery.io**:
 https://api.ipquery.io/
 ```
 
-No se requiere API key para uso básico. Consulta su [documentación oficial](https://ipquery.io) para límites de uso.
+No se requiere API key para uso básico. Consulta su [documentación oficial](https://ipquery.io) para información sobre límites de uso y *rate limiting*.
 
 ---
 
@@ -112,18 +142,28 @@ No se requiere API key para uso básico. Consulta su [documentación oficial](ht
 - Solo funciona correctamente con **IPs públicas**.
 - Las IPs privadas (ej. `192.168.x.x`, `10.x.x.x`) no retornan información válida.
 - La precisión geográfica depende de los datos del proveedor de la API.
-- El uso excesivo puede estar sujeto a límites de tasa (*rate limiting*).
+- El uso excesivo puede estar sujeto a límites de tasa (*rate limiting*, código `429`).
 
 ---
 
 ## 🛠️ Roadmap
 
-- [ ] Implementar funciones de la opción **EXTRAS**
-- [ ] Manejo de errores más detallado (timeouts, IPs inválidas, etc.)
 - [ ] Exportar resultados a JSON o CSV
 - [ ] Historial de consultas con búsqueda
 - [ ] Soporte para consultas en lote (múltiples IPs a la vez)
 - [ ] Modo silencioso (`--quiet`) para integración con scripts
+- [ ] Argumentos por línea de comandos (`python iptrack.py 8.8.8.8`)
+
+---
+
+## 👤 Autor
+
+Creado por **agk-tlanex**
+
+[![GitHub](https://img.shields.io/badge/GitHub-agk--tlanex-181717?logo=github)](https://github.com/agk-tlanex)
+[![TikTok](https://img.shields.io/badge/TikTok-@agk.tlanex-000000?logo=tiktok)](https://www.tiktok.com/@agk.tlanex)
+[![Instagram](https://img.shields.io/badge/Instagram-@agk.tlanex-E4405F?logo=instagram)](https://www.instagram.com/agk.tlanex)
+[![YouTube](https://img.shields.io/badge/YouTube-agk.tlanex-FF0000?logo=youtube)](https://www.youtube.com/channel/UCtp5Yi8hXZmvECXEPMiufRw)
 
 ---
 
