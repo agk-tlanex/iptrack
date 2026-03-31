@@ -146,16 +146,6 @@ No se requiere API key para uso básico. Consulta su [documentación oficial](ht
 
 ---
 
-## 🛠️ Roadmap
-
-- [ ] Exportar resultados a JSON o CSV
-- [ ] Historial de consultas con búsqueda
-- [ ] Soporte para consultas en lote (múltiples IPs a la vez)
-- [ ] Modo silencioso (`--quiet`) para integración con scripts
-- [ ] Argumentos por línea de comandos (`python iptrack.py 8.8.8.8`)
-
----
-
 ## 👤 Autor
 
 Creado por **agk-tlanex**
@@ -165,9 +155,3 @@ Creado por **agk-tlanex**
 [![Instagram](https://img.shields.io/badge/Instagram-@agk.tlanex-E4405F?logo=instagram)](https://www.instagram.com/agk.tlanex)
 [![YouTube](https://img.shields.io/badge/YouTube-agk.tlanex-FF0000?logo=youtube)](https://www.youtube.com/channel/UCtp5Yi8hXZmvECXEPMiufRw)
 
----
-
-## 📄 Licencia
-
-Este proyecto es de uso libre para fines **educativos y personales**.  
-Si lo usas en un proyecto propio, ¡una mención siempre es bienvenida! 🙌
