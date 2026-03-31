@@ -117,8 +117,6 @@ El programa detecta y muestra mensajes descriptivos para los siguientes códigos
 ```
 requests==2.33.1
 rich==14.3.3
-Pygments==2.20.0
-markdown-it-py==4.0.0
 ```
 
 > Ver [`requirements.txt`](./requirements.txt) para la lista completa con versiones fijadas.
