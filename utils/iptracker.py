@@ -50,6 +50,7 @@ def track(ip=None, me=None):
                 pass
             printcolor.printl("Presiona » [blink bold green]Enter[/blink bold green] « para continuar...", justify="left", style="green")
             input()
+            os.system('cls' if os.name == 'nt' else 'clear')
 
 
         elif response.status_code == 400:
@@ -92,6 +93,7 @@ def track(ip=None, me=None):
         printcolor.printl(f"Code: 000", justify="left", style="red")
         printcolor.printl("Presiona » [blink bold green]Enter[/blink bold green] « para continuar...", justify="left", style="green")
         input()
+        os.system('cls' if os.name == 'nt' else 'clear')
         pass
 
 def trackme():
