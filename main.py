@@ -4,6 +4,7 @@ from utils import banners
 from utils import iptracker
 
 def extras():
+    os.system('cls' if os.name == 'nt' else 'clear')
     banners.tlanex()
     printcolor.printl("╔════════════════════════════════════════════════════════════════════════════════════╗", justify="center", style="green")
     printcolor.printl("║                                                                                    ║", justify="center", style="green")
@@ -17,9 +18,11 @@ def extras():
     printcolor.printl("╚════════════════════════════════════════════════════════════════════════════════════╝", justify="center", style="green")
     printcolor.printl("Presiona » [blink bold green]Enter[/blink bold green] « para continuar...", justify="center", style="green")
     input()
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def main():
+    os.system('cls' if os.name == 'nt' else 'clear')
     counter = ""
     while counter != 0:
         try:
