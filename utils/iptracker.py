@@ -1,3 +1,4 @@
+import os
 import requests
 from utils import banners
 from utils import printcolor
@@ -5,7 +6,6 @@ from utils import printcolor
 URL = "https://api.ipquery.io/"
 
 def track(ip=None, me=None):
-    os.system('cls' if os.name == 'nt' else 'clear')
     if ip:
         os.system('cls' if os.name == 'nt' else 'clear')
         banners.random_banner()
@@ -95,6 +95,7 @@ def track(ip=None, me=None):
         pass
 
 def trackme():
+    os.system('cls' if os.name == 'nt' else 'clear')
     response = requests.get('https://api.ipquery.io/')
     ip = response.text
     track(ip=ip, me=1)
